@@ -1,2 +1,2 @@
-isuda: ./isuda
-isutar: ./isutar
+isuda: go run isuda.go type.go util.go
+isutar: go run isutar.go type.go util.go
