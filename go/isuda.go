@@ -20,6 +20,7 @@ import (
 
 	"github.com/Songmu/strrand"
 	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/walf443/go-sql-tracer"
 	"github.com/gorilla/mux"
 	"github.com/gorilla/sessions"
 	"github.com/unrolled/render"
@@ -412,7 +413,7 @@ func main() {
 		dbname = "isuda"
 	}
 
-	db, err = sql.Open("mysql", fmt.Sprintf(
+	db, err = sql.Open("mysql:trace", fmt.Sprintf(
 		"%s:%s@tcp(%s:%d)/%s?loc=Local&parseTime=true",
 		user, password, host, port, dbname,
 	))
